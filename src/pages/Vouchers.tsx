@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 const Vouchers = () => {
+  const navigate = useNavigate(); // Inicializar el hook para la navegación
+
   const vouchers = [
     {
       id: 1,
@@ -28,7 +31,10 @@ const Vouchers = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Vales</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+        <button
+          onClick={() => navigate('/NewVoucher')} // Navegación al hacer clic
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+        >
           Nuevo Vale
         </button>
       </div>
@@ -56,9 +62,11 @@ const Vouchers = () => {
                 <td className="px-6 py-4 whitespace-nowrap">{voucher.amount}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{voucher.vehicle}</td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <span className={`px-2 py-1 rounded-full text-xs ${
-                    voucher.status === 'Aprobado' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                  }`}>
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs ${
+                      voucher.status === 'Aprobado' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                    }`}
+                  >
                     {voucher.status}
                   </span>
                 </td>

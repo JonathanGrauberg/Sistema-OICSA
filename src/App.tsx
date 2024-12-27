@@ -12,7 +12,7 @@ import Repairs from './pages/Repairs';
 import Personnel from './pages/Personnel';
 import VehicleRegistration from './pages/VehicleRegistration';
 import Settings from './pages/Settings';
-
+import NewVoucher from './pages/newVoucher'; // Nuevo componente importado
 function App() {
   return (
     <Router>
@@ -32,6 +32,7 @@ function App() {
               <Route path="/personnel" element={<Personnel />} />
               <Route path="/vehicle-registration" element={<VehicleRegistration />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/NewVoucher" element={<NewVoucher />} /> {/* Nueva ruta añadida */}
             </Routes>
           </main>
         </div>
