@@ -12,7 +12,7 @@ import Repairs from './pages/Repairs';
 import Personnel from './pages/Personnel';
 import VehicleRegistration from './pages/VehicleRegistration';
 import Settings from './pages/Settings';
-import NewVoucher from './pages/NewVoucher'; // Nuevo componente importado
+import NewVoucher from './pages/NewVoucher';
 function App() {
   return (
     <Router>
