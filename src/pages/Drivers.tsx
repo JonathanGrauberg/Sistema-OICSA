@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Drivers = () => {
   const drivers = [
     { id: 1, name: 'Juan', lastName: 'Pérez', dni: '25789456', license: 'B-12345', status: 'Activo' },

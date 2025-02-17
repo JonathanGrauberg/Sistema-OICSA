@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, User, Truck, Users, FileSpreadsheet, Construction } from 'lucide-react';
 
 const Navbar = () => {

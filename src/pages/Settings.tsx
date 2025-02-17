@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bell, Shield, Users, Database } from 'lucide-react';
 
 const Settings = () => {

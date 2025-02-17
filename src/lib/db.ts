@@ -1,21 +1,21 @@
-import pgPromise from 'pg-promise';
+import dotenv from 'dotenv';
+import { Pool } from 'pg';
 
-const pgp = pgPromise();
+console.log('🟢 db.ts se está ejecutando...');
 
-const connectionString = 'postgres://postgres:Gwebi7593@localhost:5432/oicsa_db';
-const db = pgp(connectionString);
+dotenv.config();
 
+// Verificar si las variables se están cargando correctamente
+console.log(`🔵 DB_URL: ${process.env.DB_URL}`);
+console.log(`🔵 DB_USER: ${process.env.DB_USER}`);
+console.log(`🔵 DB_HOST: ${process.env.DB_HOST}`);
+console.log(`🔵 DB_NAME: ${process.env.DB_NAME}`);
 
+const pool = new Pool({ connectionString: process.env.DB_URL });
 
-//prueba de la DB
+pool.connect()
+    .then(() => console.log('✅ Conexión a la base de datos establecida'))
+    .catch(err => console.error('❌ Error al conectar con la base de datos:', err));
 
-(async () => {
-    try {
-      const result = await db.one('SELECT 1 AS value');
-      console.log('Conexión exitosa:', result);
-    } catch (error) {
-      console.error('Error al conectar con la base de datos:', error);
-    }
-  })();
-  
-  export default db;
+export const query = (text: string, params?: any[]) => pool.query(text, params);
+export default pool;

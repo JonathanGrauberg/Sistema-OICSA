@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
   Truck, 
@@ -31,7 +31,7 @@ const menuItems = [
       </div>
     ),
     label: 'Altas de Vehículos',
-    path: '/vehicle-registration'
+    path: '/vehicleregistration'
   },
   { icon: Settings, label: 'Configuración', path: '/settings' },
 ];
@@ -52,10 +52,11 @@ const Sidebar = () => {
             }`}
           >
             {typeof item.icon === 'function' ? (
-              item.icon({ className: "h-5 w-5" })
-            ) : (
-              <item.icon className="h-5 w-5" />
-            )}
+  item.icon({ className: "h-5 w-5" })
+) : (
+  React.createElement(item.icon as React.ElementType, { className: "h-5 w-5" })
+)}
+
             <span>{item.label}</span>
           </button>
         ))}

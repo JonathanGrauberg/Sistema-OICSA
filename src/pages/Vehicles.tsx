@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Vehicles = () => {
   const vehicles = [
     { id: 1, type: 'Camión', brand: 'Mercedes Benz', model: 'Actros', plate: 'AB123CD', status: 'Activo' },
