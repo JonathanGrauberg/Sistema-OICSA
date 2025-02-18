@@ -1,3 +1,4 @@
+'use server'
 
 import usuarioRepository from '../repository/UsuarioRepository';
 

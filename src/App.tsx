@@ -9,10 +9,10 @@ import Projects from './pages/Projects';
 import Vouchers from './pages/Vouchers';
 import Inventory from './pages/Inventory';
 import Repairs from './pages/Repairs';
-import Personnel from './pages/Personnel';
 import VehicleRegistration from './pages/VehicleRegistration';
 import Settings from './pages/Settings';
 import NewVoucher from './pages/NewVoucher';
+import { Button } from './components/dashboard/Button';
 
 function App() {
   const [message, setMessage] = useState<string>('');
@@ -51,10 +51,10 @@ function App() {
               <Route path="/repairs" element={<Repairs />} />
               <Route path="/vehicleregistration" element={<VehicleRegistration />} />
               <Route path="/settings" element={<Settings />} />
-              <Route path="/NewVoucher" element={<NewVoucher />} />
-              
+              <Route path="/NewVoucher" element={<NewVoucher />} /> 
             </Routes>
           </main>
+          <button onClick={() => Button()}>Create</button>
         </div>
       </div>
     </Router>
